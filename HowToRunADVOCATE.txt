@@ -1,0 +1,45 @@
+## This is a short manual on how to run ADVOCATE to
+## reproduce the data in the ADVOCATE manuscript
+
+## Step 0. 
+## Install the R software as described here: "https://www.r-project.org"
+
+## Step 1. Install ADVOCATE package 
+## Download the distribution file ("ADVOCATE_SOFTWARE 2.zip") 
+## into a directory of choice (e.g., your home directory "~/")
+## unzip the file. This should create a sub-directory "ADVOCATE_SOFTWARE"
+
+## open a terminal window and set the directory to the one where
+## the ADVOCATE files have been expanded, e.g., by executing the line:
+
+cd ~/ADVOCATE_SOFTWARE
+
+## execute the following command from the terminal 
+
+R CMD INSTALL ADVOCATE_0.1.0.tar.gz
+
+## Step 2. Install dependencies 
+## open R and copy following lines into R console 
+## required R packages 
+
+install.packages("foreach")
+install.packages("doMC")
+install.packages('iterators')
+install.packages('parallel')
+install.packages('mclust')
+install.packages('scales')
+
+## Step 3. Run example files 
+## Make sure the data files are in current directory
+## COPY following line into terminal 
+## This will take ~10mins to finish 
+## Go to the ADVOCATE directory, e.g., by running the following command
+ 
+cd ~/ADVOCATE_SOFTWARE 
+
+## Run the examples by executing the following command:
+
+Rscript ADV_example.R 
+
+## uses raw LCM samples from epi and stroma to calculate 
+## DEG and the weight metric for ADVOCATE model training.
